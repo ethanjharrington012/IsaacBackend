@@ -4,12 +4,14 @@ import json
 import os.path
 import requests
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 app = Flask(__name__)
+CORS(app)
 
 # If modifying these SCOPES, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
