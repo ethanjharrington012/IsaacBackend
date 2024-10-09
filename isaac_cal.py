@@ -12,6 +12,10 @@ from googleapiclient.discovery import build
 import webbrowser
 from google.auth.exceptions import RefreshError
 import traceback
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
@@ -40,10 +44,21 @@ def get_calendar_events():
                 os.remove('token.json')
                 return get_calendar_events()
         else:
+            client_id = os.getenv('GOOGLE_CLIENT_ID')
+            client_secret = os.getenv('GOOGLE_CLIENT_SECRET')   
             # If no valid credentials, initiate the flow to get them
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
-            creds = flow.run_local_server(port=0, host='127.0.0.1')
+            flow = InstalledAppFlow.from_client_config({
+                "installed": {
+                    "client_id": client_id,
+                    "client_secret": client_secret,
+                    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                    "token_uri": "https://oauth2.googleapis.com/token",
+                    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+                    "redirect_uris": ["http://localhost"]
+                }
+            }, SCOPES)
 
+            creds = flow.run_local_server(port=0, host='127.0.0.1')
         # Save the credentials for the next run
         with open('token.json', 'w') as token:
             token.write(creds.to_json())
