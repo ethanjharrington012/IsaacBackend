@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <!-- Three connected nodes forming a simple workflow -->
+  <circle cx="18" cy="20" r="5" fill="url(#g)"/>
+  <circle cx="46" cy="20" r="5" fill="url(#g)"/>
+  <circle cx="32" cy="44" r="5" fill="url(#g)"/>
+  <path d="M23 20h18" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 25l9 15" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M44 25l-9 15" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+</svg>

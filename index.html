@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simplomation — Simple automation for small business</title>
+  <meta name="description" content="Simplomation helps small businesses automate workflows and build a consistent digital presence." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <!-- Tailwind via CDN (no build step required) -->
+  <script>
+    // Tailwind Play CDN config: customize brand colors and fonts
+    window.tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#ecfeff',
+                100: '#cffafe',
+                200: '#a5f3fc',
+                300: '#67e8f9',
+                400: '#22d3ee',
+                500: '#06b6d4',
+                600: '#0891b2',
+                700: '#0e7490',
+                800: '#155e75',
+                900: '#164e63',
+              },
+              accent: {
+                400: '#34d399',
+                500: '#10b981',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'Avenir', 'Segoe UI', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
+            },
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <!-- Top bar -->
+  <header class="border-b border-white/10 sticky top-0 bg-slate-950/70 backdrop-blur z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a class="flex items-center gap-3" href="#">
+        <img src="assets/logo.svg" alt="Simplomation logo" class="h-8 w-8" />
+        <span class="text-xl font-semibold tracking-tight">Simplomation</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="#features" class="hover:text-white transition">Features</a>
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </nav>
+      <a href="#signup" class="inline-flex items-center rounded-lg bg-accent-500 px-4 py-2 text-sm font-medium text-white shadow hover:bg-accent-400 transition focus:outline-none focus:ring-2 focus:ring-accent-400/50">Get updates</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-accent-500/20 via-brand-500/25 to-indigo-600/25"></div>
+    <svg class="absolute -top-24 -right-24 w-[480px] opacity-20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#22d3ee" d="M44.8,-67.1C58.9,-58.5,70.8,-49,78.4,-36.3C86,-23.6,89.3,-7.8,87.1,7.5C84.9,22.7,77.2,37.4,66.7,49.8C56.2,62.2,43,72.4,28.5,77.4C14,82.4,-1.9,82.3,-16.1,77.1C-30.3,71.8,-42.8,61.5,-54,50C-65.2,38.6,-75.1,26.1,-79.4,11.6C-83.7,-2.8,-82.4,-19.2,-76,-33.4C-69.5,-47.6,-58,-59.7,-44.4,-68.2C-30.9,-76.6,-15.5,-81.3,-0.2,-81C15.2,-80.7,30.4,-75.7,44.8,-67.1Z" transform="translate(100 100)" />
+    </svg>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10 mb-5">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent-400"></span> Simple automation for small business
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
+          Simplify Automate Thrive
+        </h1>
+        <p class="mt-6 text-lg text-slate-300">
+          We connect the tools you already use—so quotes, bookings, invoices, and follow-ups just happen.
+          No new complex software. No headaches.
+        </p>
+
+        <div class="mt-10" id="signup">
+          <form id="signup-form" class="glass rounded-xl p-4 sm:p-6 ring-1 ring-white/10">
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <label class="sr-only" for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" class="col-span-1 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm placeholder-slate-400 outline-none focus:ring-2 focus:ring-accent-400" />
+              <label class="sr-only" for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Your email" required class="col-span-1 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm placeholder-slate-400 outline-none focus:ring-2 focus:ring-accent-400" />
+              <button type="submit" class="col-span-1 inline-flex items-center justify-center gap-2 rounded-lg bg-accent-500 px-4 py-3 text-sm font-medium text-white shadow hover:bg-accent-400 transition focus:outline-none focus:ring-2 focus:ring-accent-400/50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13"></path>
+                  <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+                </svg>
+                Join the list
+              </button>
+            </div>
+            <p id="form-message" class="mt-3 text-sm text-slate-300"></p>
+          </form>
+          <p class="mt-3 text-xs text-slate-400">
+            Tip: connect this form to Formspree or Mailchimp. See <a href="README.html" class="underline decoration-dotted underline-offset-2 hover:text-white">README</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500/20 text-accent-400 ring-1 ring-accent-400/30">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold">Workflow automation</h3>
+        <p class="mt-2 text-slate-300 text-sm">Quotes → jobs → invoices → follow-ups. Connect the dots so nothing slips.</p>
+      </div>
+      <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300 ring-1 ring-brand-400/30">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06A1.65 1.65 0 0015 19.4a1.65 1.65 0 00-1 .6 1.65 1.65 0 00-.6 1 2 2 0 11-3.9 0 1.65 1.65 0 00-.6-1 1.65 1.65 0 00-1-.6 2 2 0 110-3.9 1.65 1.65 0 001-.6 1.65 1.65 0 00.6-1A1.65 1.65 0 004.6 4.6l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 008.6 4.6a1.65 1.65 0 001 .6 1.65 1.65 0 001-.6 2 2 0 113.9 0 1.65 1.65 0 001 .6 1.65 1.65 0 001-.6 2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 00.6 1 1.65 1.65 0 001 .6 2 2 0 110 3.9 1.65 1.65 0 00-1 .6z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold">Digital presence</h3>
+        <p class="mt-2 text-slate-300 text-sm">Google Business, reviews, social—set up right, connected, and consistent.</p>
+      </div>
+      <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-400/30">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20l9-16H3z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold">Lead capture</h3>
+        <p class="mt-2 text-slate-300 text-sm">Turn visitors into customers with forms, auto-replies, and follow-ups.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="rounded-2xl bg-white/5 p-8 ring-1 ring-white/10">
+      <h2 class="text-2xl font-semibold">Built for small businesses</h2>
+      <p class="mt-3 text-slate-300">
+        Simplomation helps Maine & New England small businesses get the benefits of modern tech—without
+        switching to complicated new tools. We implement automations across the systems you already use
+        so your team stays focused on work that matters.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="" class="h-6 w-6" />
+        <span class="text-sm text-slate-300">&copy; <span id="year"></span> Simplomation. All rights reserved.</span>
+      </div>
+      <div class="text-sm text-slate-300">
+        Questions? <a class="underline decoration-dotted underline-offset-2 hover:text-white" href="mailto:hello@simplomation.com">hello@simplomation.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
